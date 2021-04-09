@@ -1,0 +1,118 @@
+{% extends 'quiz/adminbase.html' %}
+<!-- {% load static %} -->
+{% block content %}
+{% load widget_tweaks %}
+
+<center>
+  {% include 'messages.html' %}
+    <form method="POST" autocomplete="off" class="mt-5" style='width:800px' enctype="multipart/form-data" >
+      <section class="contactus-section my-0 mx-auto">
+          <h4 class='bg-warning alert text-center' > პოსტის განთავსება </h4>
+      {% csrf_token %}
+      <div class="form-group">
+        <div class="contactus-input-width my-5 mx-auto">
+            {% render_field form.title|attr:'required:true'  class="w-100 alert border shadow form-control " placeholder="სათაური" maxlength="90" %}
+            {% render_field form.description|attr:'required:true' class="w-100 alert border shadow form-control" placeholder="აღწერა" maxlength="9800" %}
+            {% render_field form.image  class=" form-control" %}
+            <br>
+            {% render_field form.video class="w-100 alert border shadow form-control " placeholder="ვიდეოს-ლინკი" maxlength="250" %}
+          <button type="submit" class='btn btn-warning mt-1'>სიახლის განთავსება</button> 
+        </div>
+      </div>
+    </form>
+  </section>
+</center>
+
+{% if post %}
+<div class="container mt-5">
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="მოძებნე სტუდენტის კოდით..." title="Type in a name">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h6 class="panel-title text-success ">განთავსებული პოსტები</h6>
+      </div>
+      <table class="table table-hover" id="dev-table ">
+        <thead>
+          <tr>
+            <th>სათაური</th>
+            <th>აღწერა</th>
+            <th>სურათი</th>
+            <th>ვიდეო</th>
+            <th>თარიღი</th>
+            <th>განახლება</th>
+            <th>წაშლა</th>
+          </tr>
+        </thead>
+        {% for t in post %}
+        <tr id="trr">
+          <td> {{t.title}}</td>
+          <td>{{t.description}}</td>  
+          {% if t.image %}
+          <td> <img src="{% static t.image.url %}" alt="Profile Pic" height="40px" width="40px"/> </td>
+          {% else %}
+          <img src="../../static/image/new/logo/star.png"  class="profile_image" alt="profile-pic">
+          {% endif %}
+          <td>{{t.video}}</td> 
+          <td>{{t.date}}</td>
+          <td><a class="btn btn-primary btn-xs" href="{% url 'update-post' t.id %}"><span class="glyphicon glyphicon-edit"></span>update</a></td>
+          <td><a class="btn btn-danger btn-xs" href="{% url 'delete-post' t.id %}"><span class="glyphicon glyphicon-trash"></span>delete</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+</div>
+{% endif %}
+
+
+<script>
+  function myFunction() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("dev-table");
+    tr = document.getElementsByTagName("tr");
+  
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0] || tr[i].getElementsByTagName("td")[5];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+  </script>
+<style>
+  #myInput {
+  /* background-image: url('/css/searchicon.png'); */
+  /* background-position: 10px 12px;
+  background-repeat: no-repeat; */
+  width: 30%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+.drop {
+  width: 30%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+.serch-style{
+  display: flex;
+  justify-content: space-between;
+}
+
+</style>
+
+<br><br><br><br><br><br>
+
+{% endblock content %}

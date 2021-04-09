@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}შენი წარმატება იწყება აქ !{% endblock %}
+{% block body %}
+{% include "quiz/navbar.html" %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/main_slider.css' %}">
+
+<!--Slider-->
+<div id="slider">
+  <div class="slide">
+    <img src="../../static/image/main_slider/first-slider-img-ka.jpg" alt="ქართულის ოლიმპიადა">
+  </div>
+  <div class="slide">
+    <img src="../../static/image/main_slider/first-slider-img-math.jpg" alt="მათემატიკის ოლიმპიადა">
+  </div>
+
+  <div class="slide">
+    <img src="../../static/image/main_slider/first-slider-img-en.png" alt="ინგლისურის ოლიმპიადა">
+  </div>
+
+  <!--Controlling arrows-->
+  <span class="controls" onclick="prevSlide(-1)" id="left-arrow"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+  </span>
+  <span class="controls" id="right-arrow" onclick="nextSlide(1)"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+  </span>
+</div>
+<div id="dots-con">
+  <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+</div>
+<main>
+  <div class="main_back">
+    <section id="section-jumbotron" class="mb-0 jumbotron-fluid d-flex justify-content-center align-items-center">
+      <div class="container text-center">
+        <h1 class="display-1 stars-color ff-custom"> შენი წარმატება იწყება აქ !</h1>
+        <a href="/student/studentsignup" class="btn btn-lg btn-warning stars-btn-large ff-custom">
+          რეგისტრაცია
+        </a>
+      </div>
+    </section>
+    <section class="news-cards-section mt-3 p-3">
+      <div class="container">
+        <div class="col-md-12 text-center ">
+          <h4 class="news-title-fs text-bold my-3 text-card-custom-color ff-custom">სიახლეები</h4>
+        </div>
+        <div class="row">
+          <div class="col-md-4 my-2">
+            <div class="card card-register h-100 mb-4">
+              <div class="card-header bg-light">
+                <h5 class="card-title m-0 p-0 font-weight-bolder text-card-custom-color">რეგისტრაცია</h5>
+              </div>
+              <div class="card-body text-left">
+                <br>
+              </div>
+              <div class="card-footer text-end">
+                <a href="/student/studentsignup" class="btn btn-warning">რეგისტრაცია</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 my-2">
+            <div class="card card-subjects h-100 mb-4">
+              <div class="card-header bg-light">
+                <h5 class="card-title m-0 p-0 font-weight-bolder text-card-custom-color text-nowrap resp-midd">საგნები და განრიგი
+                </h5>
+              </div>
+              <div class="card-body text-left"><br>
+              </div>
+              <div class="card-footer text-end">
+                <a href="/schedule" class="btn btn-warning">სრულად</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 my-2 ">
+            <div class="card h-100 mb-4 card-payment">
+              <div class="card-header bg-light">
+                <h5 class="card-title m-0 p-0 font-weight-bolder text-card-custom-color">გადახდა</h5>
+              </div>
+              <div class="card-body text-left"><br>
+              </div>
+              <div class="card-footer text-end">
+                <a href="/payment" class="btn btn-warning">სრულად</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="text-center">
+        <h4 class="fs-2 my-4 fs-2 ff-custom">ჩვენი პარტნიორები</h4>
+      </div>
+      <div class="card-deck d-flex flex-wrap justify-content-center">
+        <div class="card stars-bg-dark stars-opa shadow m-2 partner-item">
+          <a href="https://bsu.edu.ge/" target='_blank'>
+            <img class="card-img-top" src="../../static/image/partners/partner_shota.png"
+              alt="shota rustavelis saxelobis universiteti">
+            <!-- <div class="card-body">
+          </div> -->
+          </a>
+
+        </div>
+
+        <div class="card stars-bg-dark stars-opa shadow m-2 partner-item">
+          <a href="https://iliauni.edu.ge/ge/" target='_blank'>
+            <img class="card-img-top" src="../../static/image/partners/partner_iliauni.png" alt="iliauni">
+            <!-- <div class="card-body">
+          </div> -->
+          </a>
+
+        </div>
+
+        <div class="card stars-bg-dark stars-opa shadow m-2 partner-item">
+          <a href="https://gtu.ge/" target='_blank'>
+            <img class="card-img-top" src="../../static/image/partners/partner_gepei.png"
+              alt="georgian technical university">
+            <!-- <div class="card-body">
+        </div> -->
+          </a>
+
+        </div>
+
+        <div class="card stars-bg-dark stars-opa shadow m-2 partner-item">
+          <a href="https://www.facebook.com/StagiGroup/" target='_blank'>
+            <img class="card-img-top" src="../../static/image/partners/partner_stagi.png" alt="stagi">
+            <!-- <div class="card-body">
+        </div> -->
+          </a>
+
+        </div>
+    </section>
+  </div>
+
+</main>
+{% include "quiz/footer.html" %}
+<script src="{% static '/js/main_slider.js' %}"></script>
+{% endblock %}

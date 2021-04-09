@@ -1,0 +1,155 @@
+
+{% extends 'student/studentbase.html' %}
+{% block content %}
+{%load static%}
+<div class="d-flex justify-content-center">
+  <div class="certificates-wrapper m-1">
+      <div class="certificate-box">
+        {% if eng %}
+        <h3 class="text-center">ინგლისური</h3>  
+        <div class="certificate">
+          <div class="cert-wrapper">
+            <div class="cert-box">
+                <div class="cert-header">
+                    <div class="logo-cert">
+                        <img src="../../static/image/sertificate_logo.png" alt="logo">
+                    </div>
+                    <div class="title" style="left: 55%;">
+                        <h1>CERTIFICATE</h1>
+                    </div>
+                    <!-- <p>სახელი გვარი</p> -->
+                </div>
+                <div class="warded-block text-center my-5">
+                    <div class="warded-to ">
+                        <p>The certificate is warded to:</p>
+                    </div>
+                    <div class="student-name ">
+                        <p>{{request.user.first_name}} {{request.user.last_name}}</p>
+                    </div>
+                    <div class="warded-to ">
+                        <p>Who has performed well in Stars Georgia's English olympiad</p>
+                    </div>
+                </div>
+                <div class="cert-footer">
+                    <div class="left-block position-relative">
+                        <p class="lines">---------------</p>
+                        <p class="current-date">{{eng_date}}</p>
+                    </div>
+                    <div class="right-block">
+                        <div class="signature">
+                            <p class="lines">----------</p>
+                        </div>
+                        <!-- <p>Signature</p> -->
+                    </div>
+                </div>
+                <div class="cert-footer">
+                    <p>Award date</p>
+                    <p>Signature</p>
+    
+                </div>
+            </div>
+        </div>
+        </div>
+        <span class="download-certificate"> <a href="{% url 'sertificate' %}"> <button class="btn btn-outline-none download-btn"><i class="fas fa-cloud-download-alt d-block"></i>ჩამოტვირთვა</button></a></span>
+      </div>
+      {% endif %}
+      {% if geo %}
+      <div class="certificate-box">
+        <h3 class="text-center">საგანი</h3>
+        <div class="certificate">
+          <div class="cert-wrapper">
+            <div class="cert-box">
+                <div class="cert-header">
+                    <div class="logo-cert">
+                        <img src="../../static/image/sertificate_logo.png" alt="logo">
+                    </div>
+                    <div class="title" style="left: 55%;">
+                        <h1>სერტიფიკატი</h1>
+                    </div>
+                    <!-- <p>სახელი გვარი</p> -->
+                </div>
+                <div class="warded-block text-center my-5">
+                    <div class="warded-to ">
+                        <p>ჯილდოვდება:</p>
+                    </div>
+                    <div class="student-name ">
+                        <p>{{request.user.first_name}} {{request.user.last_name}}</p>
+                    </div>
+                    <div class="warded-to ">
+                        <p>სტარსის ქართული ენის ოლიმპიადაში წარმატებული მონაწილეობისთვის</p>
+                    </div>
+                </div>
+                <div class="cert-footer">
+                    <div class="left-block position-relative">
+                        <p class="lines">---------------</p>
+                        <p class="current-date">12.02.2021</p>
+                    </div>
+                    <div class="right-block">
+                        <div class="signature">
+                            <p class="lines">----------</p>
+                        </div>
+                        <!-- <p>Signature</p> -->
+                    </div>
+                </div>
+                <div class="cert-footer">
+                    <p class="salome text-center">დაჯილდოვების თარიღი</p>
+                    <p class="salome text-center">სალომე შენგელია სტარს საქართველო-ს დირექტორი</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <span class="download-certificate"> <a href="{% url 'sertificate_geo' %}"> <button class="btn btn-outline-none download-btn"><i class="fas fa-cloud-download-alt d-block"></i>ჩამოტვირთვა</button></a></span>
+      </div>
+      {% endif %}
+      {% if mat %}
+      <div class="certificate-box">
+        <h3 class="text-center">მათემატიკა</h3>
+        <div class="certificate">
+          <div class="cert-wrapper">
+            <div class="cert-box">
+                <div class="cert-header">
+                    <div class="logo-cert">
+                        <img src="../../static/image/sertificate_logo.png" alt="logo">
+                    </div>
+                    <div class="title" style="left: 55%;">
+                        <h1>CERTIFICATE</h1>
+                    </div>
+                    <!-- <p>სახელი გვარი</p> -->
+                </div>
+                <div class="warded-block text-center my-5">
+                    <div class="warded-to ">
+                        <p>The certificate is warded to:</p>
+                    </div>
+                    <div class="student-name ">
+                        <p>{{request.user.first_name}} {{request.user.last_name}}</p>
+                    </div>
+                    <div class="warded-to ">
+                        <p>Who has performed well in Stars Georgia's English olympiad</p>
+                    </div>
+                </div>
+                <div class="cert-footer">
+                    <div class="left-block position-relative">
+                        <p class="lines">---------------</p>
+                        <p class="current-date">{{mat_date}}</p>
+                    </div>
+                    <div class="right-block">
+                        <div class="signature">
+                            <p class="lines">----------</p>
+                        </div>
+                        <!-- <p>Signature</p> -->
+                    </div>
+                </div>
+                <div class="cert-footer">
+                    <p>Award date</p>
+                    <p>Signature</p>
+    
+                </div>
+            </div>
+        </div>
+        </div>
+        <span class="download-certificate"> <a href="{% url 'sertificate_math' %}"> <button class="btn btn-outline-none download-btn"><i class="fas fa-cloud-download-alt d-block"></i>ჩამოტვირთვა</button></a></span>
+      </div> 
+  </div>
+</div>
+{% endif %}
+{% endblock %}

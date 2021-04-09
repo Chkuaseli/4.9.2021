@@ -1,0 +1,24 @@
+{% extends 'quiz/adminbase.html' %}
+<!-- {% load static %} -->
+{% block content %}
+{% load widget_tweaks %}
+
+<center>
+  {% include 'messages.html' %}
+    <form method="POST" autocomplete="off" class="mt-5" style='width:800px' enctype="multipart/form-data" >
+      <section class="contactus-section my-0 mx-auto">
+          <h4 class='bg-warning alert text-center' > პოსტის განახლება </h4>
+      {% csrf_token %}
+      <div class="form-group">
+        <div class="contactus-input-width my-5 mx-auto">
+            {% render_field form.title  class="w-100 alert border shadow form-control " placeholder="სათაური" maxlength="90" %}
+            {% render_field form.description class="w-100 alert border shadow form-control" placeholder="აღწერა" maxlength="9800" %}
+            {% render_field form.image  class=" form-control" %}
+            {% render_field form.video class="w-100 alert border shadow form-control " placeholder="ვიდეოს-ლინკი" maxlength="250" %}
+          <button type="submit" class='btn btn-warning mt-1'>განახლება</button> 
+        </div>
+      </div>
+    </form>
+  </section>
+</center>
+{% endblock content %}

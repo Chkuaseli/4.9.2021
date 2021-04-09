@@ -1,0 +1,419 @@
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800%7CRaleway:100,200,300,400,600,700,800,900%7CMontserrat:100,200,300,400,500,600,700,800,900'); */
+html{
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+/* reset */
+.custom-height-res{
+    height: 100vh;
+}
+/* main page */
+/* .ff-custom{
+    font-family: "BPG Nino Mtavruli", sans-serif;
+} */
+.main_back{
+    background-image: url(../image/main_bacground/backgound-v1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.partner-item{
+    width: 200px;
+    height: 200px;
+}
+/* news section */
+
+.box-shadow {
+    box-shadow: 0px 0px 18px -3px rgba(143, 143, 143, .50);
+}
+.card:hover {
+    box-shadow: 0px 0px 20px -3px rgba(143, 143, 143, .75);
+}
+.box-shadow-dark {
+    box-shadow: 3px 3px 11px -3px rgba(0, 0, 0, .25);
+}
+.text-card-custom-color{
+    color: #343148;
+}
+.font-weight-bolder {
+    font-weight: 900;
+}
+.display-1, .display-2, .display-3, .display-4 {
+    font-weight: 900;
+}
+.heading-big {
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0.15rem 0;
+    line-height: 1.2;
+    font-size: 2rem;
+    transition: color 0.5s ease-in, border-color 0.5s ease-in-out;
+}
+.heading-big-square {
+    padding: 1rem 1rem;
+    border: 10px solid red;
+    margin: 0.5rem auto 1rem auto;
+}
+.heading-big:hover {
+    color: #f90;
+    border-color: #f90;
+}
+.news-title-fs{
+    font-size: 40px;
+}
+.card {
+    transition: 0.5s ease;
+    border-radius: 0;
+    transform: perspective(3em) rotateX(0deg) rotateY(-1.175deg) rotateZ(-1deg);
+    opacity: 0.9;
+}
+.card-header {
+    border-radius: 0;
+}
+.card-footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.card-header, .card-footer {
+    transition: 0.5s ease;
+}
+.card:hover {
+    border-color: #343148;
+    transform: perspective(0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+.card:hover .card-header, .card:hover .card-footer {
+    color: #ba8b00;
+    border-color: #ffc107;
+    border-top: 0;
+}
+.card:hover .promotion-promo {
+    transform: scale(1.175) translateY(2.5px);
+    transform-origin: left center;
+}
+.card:hover .promotion-price {
+    transform: translate(2.5px, 17.5px) scale(1.15);
+    transform-origin: center right;
+}
+.card-payment{
+    background-image: url(../image/newcards/payment.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 330px !important;
+}
+.card-register{
+    background-image: url(../image/newcards/register.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 330px !important;
+}
+.card-subjects{
+    background-image: url(../image/newcards/subjects.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 330px !important;
+}
+.card-body {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.card .btn {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.card-animate {
+    counter-reset: section;
+}
+.card-animate .card-body:before {
+    transition: 0.5s ease;
+    counter-increment: section;
+    content: "" counter(section) "";
+    display: block;
+    font-size: 15rem;
+    font-weight: 900;
+    position: absolute;
+    bottom: 5rem;
+    line-height: 0;
+    left: -0.85rem;
+    padding: 0;
+    margin: 0;
+    color: rgba(0, 0, 0, .10);
+    z-index: 0;
+}
+.card-animate .card:hover .card-body:before {
+    transform: translate(10px, -10px);
+}
+.card-animate .card-text {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.card-animate .card-title {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.row{
+    width: 97% !important;
+}
+
+/* payment-page */
+.credo-color{
+    color: #ea4b37;
+}
+/* phone otp */
+.custom-height{
+    height: 100vh;
+}
+.sms-auth-input-props{
+    width: 50px;
+    height: 70px;
+    background-color: #5151cc;
+}
+.center-item-width{
+    width: 50px;
+}
+.bg-sms-auth-cover{
+    background-color: #0f0f1a;
+    background-image: url(../../images/stars_background_verify.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+/* students login */
+.auth-form-dimensions{
+    max-width: 430px;
+  }
+  Chrome, Safari, Edge, Opera
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+/* contactus */
+.contactus-section{
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.contactus-input-width{
+    max-width: 400px;
+    width: 50%;
+}
+.send-feedback-button{
+    width: 130px;
+}
+
+/* about page */
+.about-section{
+    margin-top: 76px;
+}
+.about-cover-img-width{
+    max-width: 500px;
+    width: 100%;
+}
+.bg-color-header{
+    background-color: #343148;
+}
+.stars-bg-footer-color{
+    background-color: #343148;
+}
+.stars-color{
+    color: #343148 !important;
+}
+.stars-bg-dark{
+    background-color: #343148;
+}
+.stars-bg-orange{
+    background-color: #d5ad36 !important;
+}
+.stars-color-2{
+    color: #d5ad36 !important;
+}
+.stars-btn-large{
+    line-height: 3;
+    font-weight: bold;
+    padding: 1rem 6rem !important;
+    font-size: x-large !important;
+}
+.stars-opa{
+    opacity: 0.95;
+}
+.questions-back{
+    height: 95vh;
+}
+.register_choice{
+    width: 230px !important;
+}
+.footer-logo{
+    width: 60px;
+}
+.logo-hover:hover{
+    transform: scale(1.5);
+    transition: all 0.3s ease-out;
+}
+.logo-social:hover{
+    transform: scale(1.5);
+    transition: all 0.3s ease-out;
+}
+.footer-link{
+    color: #d5ad36;
+}
+.footer-link:hover{
+    color: #806a2a;
+    transition: 0.3s;
+}
+/* social icon colors */
+.text-fb{
+    color: #343148;;
+}
+.text-fb:hover{
+    color: #4267B2 !important;
+}
+.text-you:hover{
+    color: #FF0000 !important;
+}
+.text-insta:hover{
+    color: #E1306C !important;
+}
+.nav-links-hover:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+/* student register style */
+.form_control_register {
+    margin-bottom: 8px;
+    height: 60px;
+}
+.form_grop_width_register{
+  max-width: 500px;
+  width:100%;
+}
+.register_image {
+    position: relative;
+    font-family: calibri;
+    width: 100px;
+    border: 1px dashed #BBB;
+    height: 40px;
+    text-align: center;
+    background-color: #DDD;
+    cursor: pointer;
+}
+/* faq arrow */
+.accordion-button::after{
+    margin-right: 0 !important;
+    margin-left: auto !important;
+}
+.card-group{
+    width: 96%;
+}
+/* changes of accordion button */
+.accordion-button{
+    text-align: left !important;
+}
+/* news page */
+.card-deck{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-img-top{
+    width: 100%;
+    border-bottom-right-radius: 20px;
+}
+.stars-w{
+    width: 300px;
+    opacity: 1;
+}
+.card-img-top, .stars-w{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.button-wrapper{
+    display: flex;
+    justify-content: flex-end;
+}
+.button-wrapper .srulad-news:hover{
+    transform: scale(1.1);
+    transition: .3s ease-in-out;
+}
+/* news-details page */
+.img-news{
+    width: 500px;
+    height: 500px;
+}
+.news-image{
+    max-width: 500px !important;
+}
+.content-body{
+    font-size: 18px;
+}
+.news-det{
+    padding: 16px;
+}
+@media (max-width:991px){
+    .resp-midd{
+        font-size: 18px;
+    }
+    .img-news{
+        width: 300px;
+        height: 300px;
+    }
+    .video-news{
+        width: 300px;
+        height: 300px;
+        transition: .3s ease-in-out;
+    }
+    .news-image{
+        max-width: 300px !important;
+        transition: 0.2s ease-in-out;
+    }
+    .content-body{
+        font-size: 16px;
+    }
+    .news-det{
+        padding: 10px;
+    }
+}
+@media (max-width: 768px){
+    .news-det-wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+    .news-det{
+        padding: 8px;
+    }
+}
+@media(min-width: 768px){
+    .contact-button{
+        background-color: #ffc107 !important;
+    }
+
+}
+/* responsive for slider */
+@media (max-width: 540px){
+    .stars-btn-large{
+        padding: .5rem 3rem !important;
+    }
+    .partner-item{
+        width: 120px;
+        height: 120px;
+    }
+    .news-det{
+        padding: 0;
+        margin: 5px !important;
+    }
+}
+@media (max-width:348px){
+    .news{
+        padding: 16px;
+    }
+}

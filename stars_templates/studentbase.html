@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} მოსწავლის პროფილი {% endblock title %} </title>
+  <link rel="shortcut icon" href="{% static '/image/new/logo/title-logo.png' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static '/css/studentbase.css' %}">
+</head>
+<body>
+  <input type="checkbox" checked id="check">
+<!--header area start-->
+<header>
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between custom-width">
+            <a class="navbar-brand" href="/" style="height: 60px;">
+                <img class="logo-hover" src="../../static/image/new/logo/star.png" alt="Geo Stars Logo" style="width: 50px;">
+            </a>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-dark color-orange-stars dropdown-toggle"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                პროფილი
+            </button>
+            <div class="dropdown-menu dropdown-menu-right bg-dark stars-opa">
+                <button class="dropdown-item" type="button"><a class="color-orange-stars" href="/student/student-settings">
+                        პარამეტრები
+                    </a></button>
+                    <button class="dropdown-item " type="button"><a class="color-orange-stars" href="/student/password_change">
+                      პაროლის შეცვლა</a></button>
+                <button class="dropdown-item " type="button"><a class="color-orange-stars" href="/logout">
+                        გამოსვლა</a></button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="content">
+<div class="d-flex justify-content-around bg-dark-stars student-navigation mb-2">
+    <a class="color-orange-stars hover-student-nav" href="/student/student-dashboard" title="მაგიდა"><i class="mr-2 fas fa-chart-line"></i><span>მაგიდა</span></a>
+    <a class="color-orange-stars hover-student-nav" href="/student/student-exam" title="გამოცდა"><i class="mr-2 fas fa-book"></i><span>გამოცდა</span></a>
+    <a class="color-orange-stars hover-student-nav" href="/student/student-dashboard-pretest" title="გადახდა"><i class="mr-2 fas fa-book"></i><span>სავარჯიშო</span></a>
+    <a class="color-orange-stars hover-student-nav" href="/student/student-marks" title="ქულები"><i class="mr-2 fas fa-sort-numeric-up"></i><span>ქულები</span></a>
+    <a class="color-orange-stars hover-student-nav" href="/student/student-sertificateion" title="ჩემი მიღწევები"><i class="mr-2 fas fa-star"></i><span>ჩემი მიღწევები</span></a>
+    <a class="color-orange-stars hover-student-nav" href="/student/student-dashboard-payment" title="გადახდა"><i class="mr-2 fas fa-dollar-sign"></i><span>გადახდა</span></a>
+    
+</div>
+<div class="d-flex justify-content-end">
+    <button id="up-btn" type="button" class="btn btn-dark btn-sm"><i class="far fa-arrow-alt-circle-up p-1"></i></button>
+    <button id="down-btn" type="button" class="btn btn-dark btn-sm"><i class="far fa-arrow-alt-circle-down p-1"></i></button>
+</div>
+{% block content %}
+
+{% endblock content %}
+
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"></script>
+<script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+crossorigin="anonymous"></script> 
+ 
+<script src="{% static '/js/main.js' %}"></script>   
+<!-- <script src="{% static '/js/main_slider.js' %}"></script>    -->
+<script src="https://kit.fontawesome.com/753ea48368.js" crossorigin="anonymous"></script>
+<script>
+    var box  = document.getElementById('box');
+    var down = false;
+    var x = document.getElementsByClassName('cls');
+    
+function toggleNotifi(){
+if (down)  {
+box.style.height  = '0px';
+box.style.opacity = 0;
+box.style.display = 'none';
+down = false;
+}
+else {
+box.style.height  = '430px';
+box.style.opacity = 1;
+box.style.display = 'block';
+down = true;
+}
+} 
+    let btnDown = document.querySelector('#down-btn');
+    let btnUp = document.querySelector('#up-btn');
+    let menu = document.querySelector('.student-navigation');
+    let menuExpand = true;
+    btnUp.style.display = 'none';
+    btnDown.addEventListener('click', () => {
+        menu.style.marginTop = 0 + 'px';
+        btnDown.style.display = 'none';
+        btnUp.style.display = 'block'
+    })
+    btnUp.addEventListener('click', () => {
+        menu.style.marginTop = -192 + 'px';
+        btnUp.style.display = 'none';
+        btnDown.style.display = 'block';
+        menuExpand = false;
+    })
+</script>
+</body>
+</html>

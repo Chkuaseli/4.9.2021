@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>სერტიფიკატი</title>
+    <link rel="shortcut icon" href="../../static/image/new/logo/title-logo.png" />
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/studentbase.css">
+</head>
+<body>
+    <div class="cert-wrapper">
+        <div class="cert-box">
+            <div class="cert-header">
+                <div class="logo-cert">
+                    <img src="../../static/image/sertificate_logo.png" alt="logo">
+                </div>
+                <div class="title">
+                    <h1>CERTIFICATE</h1>
+                </div>
+                <!-- <p>სახელი გვარი</p> -->
+            </div>
+            <div class="warded-block text-center my-5">
+                <div class="warded-to ">
+                    <p>The certificate is awarded to:</p>
+                </div>
+                <div class="student-name ">
+                    <p>{{request.user.first_name}} {{request.user.last_name}}</p>
+                </div>
+                <div class="warded-to ">
+                    <p>Who has performed well in Stars Georgia's English olympiad</p>
+                </div>
+            </div>
+            <div class="cert-footer">
+                <div class="left-block position-relative">
+                    <p class="lines">---------------</p>
+                    <p class="current-date">{{myvar}}</p>
+                </div>
+                <div class="right-block">
+                    <div class="signature">
+                        <p class="lines">----------</p>
+                    </div>
+                    <!-- <p>Signature</p> -->
+                </div>
+            </div>
+            <div class="cert-footer">
+                <p>Award date</p>
+                <p>Signature</p>
+
+            </div>
+        </div>
+    </div>
+    <script src="../../static/js/html2pdf.bundle.min.js"></script>
+    <script>
+        let element = document.querySelector('.cert-wrapper')
+        html2pdf(element, {
+            
+            margin:       20,
+            filename:     'certificate.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2, logging: true, dpi: 192, letterRendering: true },
+            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'student/studentbase.html' %}
+{% block content %}
+{%load static%}
+<div class="d-flex flex-column align-items-center">
+    <p class="text-danger ml-2">* საბანკო გადმორიცხვისას, <strong>აუცილებლად</strong> მიუთითეთ მოსწავლის უნიკალური<strong> კოდი</strong> და <strong>საგნის დასახელება</strong>. თანხა ანგარიშზე აისახება 2-3 სამუშაო დღეში.</p>
+<div class="border my-2">
+    <div class="payment-card p-1 d-flex align-items-center">
+        <img class="payment-img" src="../../static/image/new/liberty.png" alt="payment-logo">
+        <p class="ml-1">ანგარიშის ნომერი : <span>GE13LB0113158185575000</span></p>
+    </div>
+    <div class="payment-card p-1 d-flex align-items-center">
+        <img class="payment-img" src="../../static/image/new/credo.png" alt="payment-logo">
+        <p class="ml-1">ანგარიშის ნომერი : <span>GE59CD0360000021033464</span></p>
+    </div>
+    <div class="payment-card p-1 d-flex align-items-center">
+        <img class="payment-img" src="../../static/image/new/tbc.png" alt="payment-logo">
+        <p class="ml-1">ანგარიშის ნომერი : <span>GE20TB7444636080100008</span></p>
+    </div>
+    <div class="payment-card p-1 d-flex align-items-center">
+        <img class="payment-img" src="../../static/image/new/bog.jpg" alt="payment-logo">
+        <p class="ml-1">ანგარიშის ნომერი : <span>GE72BG0000000498792914</span></p>
+    </div>
+</div>
+</div>
+{% endblock %}
